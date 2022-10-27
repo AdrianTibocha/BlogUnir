@@ -1,0 +1,130 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/fondo.png);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+input {
+    width: 50%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-left: 5rem;
+}
+
+.margin-interno {
+    padding: 0px 70px;
+}
+
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.title {
+    font-size: 35px;
+}
+
+.menu {
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 60px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+    flex: 5 1 auto;
+}
+
+.logo a {
+    font-size: 30px;
+}
+
+.logo a:hover {
+    color: #343434;
+}
+
+.nav {
+    flex: 5 1 auto;
+}
+
+.nav a {
+    color: white;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0px 10px;
+    letter-spacing: 2px;
+}
+
+.nav a:hover {
+    color: #343434;
+}
+
+.texto-principal {
+    margin-top: 10px;
+    display: flex;
+    align-items: initial;
+}
+
+.fila {
+    flex-direction: row;
+}
+
+.columna {
+    flex-direction: column;
+}
+
+h1 {
+    padding-left: 5rem;
+    flex: 1;
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    color: #fff;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.6;
+}
+
+h2 {
+    padding-left: 5rem;
+    flex: 1;
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    color: #fff;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.caja-boton{
+    flex: 1;
+    margin-left: 5rem;
+    margin-top: 1rem;
+}
+
+button{
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color:antiquewhite;
+    transition-duration: 0.4s;
+    margin-left: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color:dodgerblue;
+    color: white;
+  }
