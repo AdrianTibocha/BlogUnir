@@ -57,11 +57,11 @@ function contadorVocales() {
         //se obtiene la cadena escrita sin acentos y en minuscula
         var cadena = removerAcentos(document.getElementById('cantidadVocales').value.toLowerCase());
         //se obtiene el total de coincidencias por vocal en la cadena ingresada
-        var a = (cadena.match(/[a]/g)||[]).length;
-        var e = (cadena.match(/[e]/g)||[]).length;
-        var i = (cadena.match(/[i]/g)||[]).length;
-        var o = (cadena.match(/[o]/g)||[]).length;
-        var u = (cadena.match(/[u]/g)||[]).length;
+        var a = (cadena.match(/[a]/g) || []).length;
+        var e = (cadena.match(/[e]/g) || []).length;
+        var i = (cadena.match(/[i]/g) || []).length;
+        var o = (cadena.match(/[o]/g) || []).length;
+        var u = (cadena.match(/[u]/g) || []).length;
         var resultado = "Total de coincidencias por vocal: a-" + a +
             ", e-" + e +
             ", i-" + i +
@@ -77,25 +77,24 @@ function removerAcentos(cadena) {
     return cadena.normalize("NFD").replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi, "$1").normalize();;
 }
 
-function obtenerDatos(){
-    try{
-    var url = document.getElementById('urlInput').value;
-    document.getElementById('estado').innerHTML = "Estado: cargando";
-    fetch(url)
-    .then(res => 
-        {
-            document.getElementById('estado').innerHTML = "Estado: completada";
-            var any = res;
-            console.log(any);
-        }
-    )
-    .catch(error => alert('Error en la solitud a la url ' + url))
+function obtenerDatos() {
+    try {
+        var url = document.getElementById('urlInput').value;
+        document.getElementById('estado').innerHTML = "Estado: cargando";
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
 
-    }catch(error){
+        fetch(url, requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    } catch (error) {
         alert('Error al obtener datos, verifique la url de entrada');
     }
 }
 
-function loadData(){
+function loadData() {
     document.getElementById('urlName').innerHTML = document.URL;
 }
