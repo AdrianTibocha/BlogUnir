@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/maquetacion.css">
+    <script src="js/scripts.js"></script>
+    <title>Unir - Desarrollo de aplicaciones en red</title>
+</head>
+<body onload="loadData()">
+    <header class="header">
+        <div class="menu  margin-interno">
+            <div class="logo">
+                <a href="inicio.html">UNIR - Desarrollo de aplicaciones en red</a>
+            </div>
+            <div class="nav">
+                <a href="inicio.html"><i class="fas fa-home"></i> 
+                <span class="off">Inicio</span> </a>
+                <a href="html.html"><i class="fab fa-html5"></i>
+                    <span class="off">HTML5</span></a>
+                <a href="css3.html"><i class="fab fa-css3"></i>
+                    <span class="off">CSS3</span></a>
+                <a href="javascript.html"><i class="fab fa-js"></i>
+                    <span class="off">JavaScript</span></a>
+                <a href="contacto.html"><i class="fas fa-envelope"></i>
+                    <span class="off">Contacto</span></a>
+                <a href="script.html"><i class="fas fa-laptop-code"></i>
+                    <span class="off">Script</span></a>
+            </div>
+        </div>
+        <br>
+        <h1 class="title">JavaScript & AJAX</h1>
+        <div class="texto-principal  margin-interno fila">
+            <h1>
+                <form action="">
+                    <hr>
+                    <h2>
+                        Palindromo
+                    </h2>
+                    <input id="palindromo">
+                    <button onclick="esPalindromo()">
+                        Validar
+                    </button>
+                    <hr>
+                    <h2>
+                        Numero mayor
+                    </h2>
+                    <input id="numero1" type="number" step="any"><input id="numero2" type="number" step="any">
+                    <button onclick="obtenerNumeroMayor()">
+                        Validar
+                    </button>
+                    <hr>
+                    <h2>
+                        Vocales en la frase
+                    </h2>
+                    <input id="diferentesVocales">
+                    <button onclick="validarDiferentesVocales()">
+                        Validar
+                    </button>
+                    <hr>
+                    <h2>
+                        Cantidad de vocales
+                    </h2>
+                    <input id="cantidadVocales">
+                    <button onclick="contadorVocales()">
+                        Validar
+                    </button>
+                    <hr>
+                </form>
+            </h1>
+            <h1>
+                <ul>
+                    <li id="urlName">Url </li>
+                    <li>Ingrese una url para obtener su contenido</li>
+                    <input id="urlInput">
+                    <button onclick="obtenerDatos()">
+                        Mostrar contenido
+                    </button>
+                    <div id="contenidoUrl">
+
+                    </div>
+                    <li id="estado">Estado: no iniciada</li>
+                    <li id="cabeceras">Cabeceras </li>
+                    <li id="codigo">Codigo </li>
+                  </ul>
+            </h1>
+        </div>
+    </header>
+</body>
+</html>
