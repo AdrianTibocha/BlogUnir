@@ -84,8 +84,7 @@ function obtenerDatos() {
         document.getElementById('estado').textContent = "Estado: cargando";
 
         var requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
+            method: 'GET'
         };
         fetch(url, requestOptions)
             .then(async response => {
