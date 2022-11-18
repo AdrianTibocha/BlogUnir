@@ -26,6 +26,10 @@ input {
     margin-left: 0;
 }
 
+#cabeceras{
+    white-space: pre-line;
+}
+
 .margin-interno {
     padding: 0px 70px;
 }

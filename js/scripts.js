@@ -79,22 +79,39 @@ function removerAcentos(cadena) {
 
 function obtenerDatos() {
     try {
-        var url = document.getElementById('urlInput').value;
-        document.getElementById('estado').innerHTML = "Estado: cargando";
+        var proxy = "https://protected-peak-24614.herokuapp.com/";
+        var url = proxy + document.getElementById('urlInput').value;
+        document.getElementById('estado').textContent = "Estado: cargando";
+
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
         };
-
         fetch(url, requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            .then(async response => {
+                var contenido = await response.text();
+                var contenidoParcial = contenido.substring(0,150);
+                document.getElementById('contenidoUrl').textContent = "Contenido: " + contenidoParcial; 
+                console.log(contenido);
+                var headers = "Cabeceras:\n";
+                for(var header of response.headers.entries())
+                    {
+                        headers += header[0] + " : " + header[1] + "\n";
+                    }
+                document.getElementById('cabeceras').textContent = headers;
+                document.getElementById('codigo').textContent = "Codigo: " + response.status;
+                document.getElementById('textoRespuesta').textContent = "Texto respuesta: " + response.statusText;
+                document.getElementById('estado').textContent = "Estado: Completada";
+            })
+            .catch(error => {
+                document.getElementById('estado').textContent = "Estado: Error en la peticion, consulte la consola de salida";
+                console.log('error', error)
+            });
     } catch (error) {
         alert('Error al obtener datos, verifique la url de entrada');
     }
 }
 
 function loadData() {
-    document.getElementById('urlName').innerHTML = document.URL;
+    document.getElementById('urlName').textContent = "Url: " + document.URL;
 }
